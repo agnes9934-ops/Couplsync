@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "쿠플 싱크",
+  "version": "0.1.0",
+  "description": "쿠팡플레이를 친구와 같이 보기: 재생 동기화 + 채팅",
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.coupangplay.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.coupangplay.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
